@@ -51,8 +51,10 @@ const getChefBirthday = async (id) => {
         throw new Error(chef.message);
     }
 
+    const formattedBirthdayDate = dayjs(chef.birthDate).format('DD/MM/YYYY');
+
     // Il RETURN avviene solo nel caso in cui non ci siano errori.
-    return chef.birthDate;
+    return formattedBirthdayDate;
 }
 
 
@@ -61,7 +63,6 @@ const getChefBirthday = async (id) => {
 // IIFE ( immediately invoked function expression )
 /* Invoco immediatamente la mia funzione per eseguire i fetch descritti sopra.
 Utilizzo TRY CATCH perchè devo gestire gli errori personalizzati che lancio nella funzione sopra, quindi devo intercettarli. */
-
 (async () => {
     try {
         const chefBirthday = await getChefBirthday(1);
@@ -69,9 +70,10 @@ Utilizzo TRY CATCH perchè devo gestire gli errori personalizzati che lancio nel
         console.log('Data di nascita dello Chef:', chefBirthday);
     } catch (error) {
         // Altrimenti intercetto l'errore.
-        console.error(error);
+        console.error('Errore:', error.message);
     } finally {
-        // Grazie al FINALLY, anche in caso di errore posso comunque eseguire il blocco di codice sotto.
+        // Grazie al FINALLY, sono sicuro di poter comunque eseguire il blocco di codice sotto.
+        // In questo caso, essendoci una corretta gestione dell'errore, il blocco verrebbe eseguito in ogni caso.
         console.log('FINALLY: Fine operazione.')
     }
 })();
