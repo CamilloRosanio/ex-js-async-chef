@@ -2,6 +2,7 @@
 # IL COMPLEANNO DELLO CHEF
 ***********************************************************************/
 
+
 // Creo questa funzione per centralizzare le future fetch e compattare il codice, oltre che renderlo più ordinato.
 async function fetchJson(url) {
     // Grazie all'ASYNC AWAIT, "response" in questo caso assume il valore della Promise, senza bisogno di specificare THEN o CATCH.
@@ -74,9 +75,3 @@ Utilizzo TRY CATCH perchè devo gestire gli errori personalizzati che lancio nel
         console.log('FINALLY: Fine operazione.')
     }
 })();
-
-
-
-/***********************************************************************
-# BONUS 1
-***********************************************************************/
