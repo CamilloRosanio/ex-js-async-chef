@@ -74,3 +74,9 @@ Utilizzo TRY CATCH perchè devo gestire gli errori personalizzati che lancio nel
         console.log('FINALLY: Fine operazione.')
     }
 })();
+
+
+
+/***********************************************************************
+# BONUS 1
+***********************************************************************/
